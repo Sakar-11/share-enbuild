@@ -1,0 +1,59 @@
+
+                      {task.subTask.map((subTask, subTaskIndex) => {
+                        return (
+                          <Link
+                            key={subTaskIndex}
+                            style={{ textDecoration: "none" }}
+                            to={`/activities/${path.activity}/${path.subactivity}/${index}/${subTaskIndex}`}
+                          >
+                            <Card
+                              style={{
+                                boxShadow: "0 2px 4px rgb(179, 179, 179)",
+                              }}
+                              className="mb-2"
+                              variant="outlined"
+                            >
+                              <CardContent>
+                                <Grid
+                                  container
+                                  justify="space-between"
+                                  alignItems="center"
+                                  direction="row"
+                                >
+                                  <Grid item xs={8}>
+                                    <Typography variant="h5" component="h2">
+                                      {subTask.name}
+                                    </Typography>
+                                  </Grid>
+                                  <Grid item>
+                                    <Typography
+                                      // style={{ marginLeft: "20px" }}
+                                      color="textSecondary"
+                                    >
+                                      {/* {this.fetchPercentage(
+                                  iterIndex - 1,
+                                  finalActivity
+                                ).toFixed(2)}
+                                % */}
+                                    </Typography>
+                                  </Grid>
+                                  <IconButton
+                                    aria-label="settings"
+                                    // onClick={this.handleExpandClick}
+                                    style={{
+                                      backgroundColor: "red",
+                                      color: "#fff",
+                                      padding: 4,
+                                    }}
+                                  >
+                                    <Delete />
+                                  </IconButton>
+                                  <Grid item>
+                                    <ArrowForwardIosIcon />
+                                  </Grid>
+                                </Grid>
+                              </CardContent>
+                            </Card>
+                          </Link>
+                        );
+                      })}
